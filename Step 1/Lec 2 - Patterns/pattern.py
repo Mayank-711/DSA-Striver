@@ -217,6 +217,83 @@ class Solution:
             print()
         print()
 
+    def pattern14(self,n):
+        for i in range(n):
+            for ch in range(ord('A'),ord('A')+ i+1):
+                print(chr(ch),end='')
+            print()
+    
+    def pattern15(self,n):
+        for i in range(n,1,-1):
+            for ch in range(ord('A'),ord('A')+i - 1):
+                print(chr(ch),end='')
+            print()
+    
+    def pattern16(self,n):
+        ch = ord('A') -1
+        for i in range(n):
+            print(chr(ch) * i)
+            ch +=1
+    
+    def pattern17(self,n):
+        for i in range(n):
+            spaces = n - i -1
+            print(' '*spaces,end='')
+            ch= ord('A')
+            for j in range(i +1):
+                print(chr(ch+j),end='')
+            for k in range(i-1,-1,-1):
+                print(chr(ch+k),end='')
+            print()
+        print()
+
+    def pattern18(self,n):
+        for i in range(n):
+            ch = ord('A')+n
+            for j in range(i+1):
+                print(chr(ch),end='')
+                ch -=1
+            print()
+            ch = ord('A')+n
+    
+    def pattern19(self,n):
+        for i in range(n):
+            spaces = n-i*2 + n
+            print('*'*i + ' '*spaces + '*'*i)
+        for j in range(i,0,-1):
+            spaces = n - j*2 +n
+            print('*'*j + ' '*spaces + '*'*j)
+
+
+    def pattern20(self,n):
+        for i in range(n,0,-1):
+            spaces = n - i*2 + n 
+            print('*'*i+ ' '*spaces ,'*'*i)
+        for j in range(n+1):
+            spaces = n-j*2 + n
+            print('*'*j + ' '*spaces + '*'*j)
+
+    
+    def pattern21(self,n):
+        print('*'*n)
+        for i in range(n+1):
+            spaces = n -2
+            print('*'+' '*spaces+'*')
+        print('*'*n)
+
+    def pattern22(self, n):
+        size = 2 * n - 1
+        for i in range(size):
+            for j in range(size):
+                top = i
+                left = j
+                right = size - 1 - j
+                bottom = size - 1 - i
+                min_dist = min(top, left, right, bottom)
+                print(n - min_dist, end='')
+            print()
+
+        
 
 sol = Solution()
 sol.pattern1(4)
@@ -231,4 +308,13 @@ sol.pattern9(7)
 sol.pattern10(5)
 sol.pattern11(7)
 sol.pattern12(5)
-sol.pattern13(5)
+sol.pattern13(4)
+sol.pattern14(4)
+sol.pattern15(5)
+sol.pattern16(5)
+sol.pattern17(6)
+sol.pattern18(7)
+sol.pattern19(5)
+sol.pattern20(5)
+sol.pattern21(5)
+sol.pattern22(5)
